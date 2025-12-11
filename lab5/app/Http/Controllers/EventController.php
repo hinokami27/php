@@ -17,7 +17,7 @@ class EventController extends Controller
     public function index()
     {
         // Користиме eager loading за да го вчитаме организаторот за секој настан
-        $events = Event::with('organizer')->paginate(2);
+        $events = Event::with('organizer')->paginate(10);
         return view('events.index', compact('events'));
     }
 

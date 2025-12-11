@@ -12,7 +12,7 @@ class OrganizerController extends Controller
     // Index: Преглед на сите записи со пагинација
     public function index()
     {
-        $organizers = Organizer::paginate(2); // 10 записи по страница
+        $organizers = Organizer::paginate(10); // 10 записи по страница
         return view('organizers.index', compact('organizers'));
     }
 
