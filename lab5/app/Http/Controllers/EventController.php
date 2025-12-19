@@ -71,8 +71,9 @@ class EventController extends Controller
      */
     public function update(UpdateEventRequest $request, Event $event)
     {
-        $event->update($request->validated());
+        $validatedData = $request->validated();
 
+        $event->update($validatedData);
         return redirect()->route('events.index')
             ->with('success', 'Настанот е успешно ажуриран.');
     }
